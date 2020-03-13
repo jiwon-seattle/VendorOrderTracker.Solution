@@ -23,6 +23,15 @@ namespace VendorOrderTracker.Models
       return _vendorInstances;
     }
 
+    public string GetName()
+    {
+      return _vendorName;
+    }
+    public int GetId()
+    {
+      return _id;
+    }
+
     public static Vendor Find(int searchId)
     {
       return _vendorInstances[searchId];

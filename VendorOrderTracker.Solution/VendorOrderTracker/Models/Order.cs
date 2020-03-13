@@ -8,7 +8,7 @@ namespace VendorOrderTracker.Models
     private int _id = 0;
     private int _auto_incremented_id;
 
-    private static Dictionary<string, int> Bakeries = new Dictionary<string, int> {};
+    private static Dictionary<string, int> Bakeries = new Dictionary<string, int> {{"Danish", 3}, {"Cake", 10}, {"Muffin", 5}};
     private string _date;
 
     public Order(string date)
@@ -17,21 +17,21 @@ namespace VendorOrderTracker.Models
       _orders.Add(this);
       _date = date;
     }
-    public static void Main()
-    {
-      Bakeries.Add("Danish", 3);
-      Bakeries.Add("Cake", 10);
-      Bakeries.Add("Muffin", 5);
-    }
+    // public static void Main()
+    // {
+    //   Bakeries.Add("Danish", 3);
+    //   Bakeries.Add("Cake", 10);
+    //   Bakeries.Add("Muffin", 5);
+    // }
 
-    public static List<Order> GetAll()
+    public List<Order> GetAll()
     {
       return _orders;
     }
 
-    public static void ClearAll()
+    public void ClearAll()
     {
-      _order.Clear();
+      _orders.Clear();
     }
     public int GetId()
     {
@@ -42,7 +42,7 @@ namespace VendorOrderTracker.Models
     {
       return _date;
     }
-    public static Order Find(int searchId)
+    public Order Find(int searchId)
     {
       return _orders[searchId];
     }
