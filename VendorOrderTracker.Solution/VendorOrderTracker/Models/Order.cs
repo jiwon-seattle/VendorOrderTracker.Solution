@@ -4,11 +4,11 @@ namespace VendorOrderTracker.Models
 {
   public class Order
   {
-    private List<Order> _orders = new List<Order>{};
-    private int _id = 0;
-    private int _auto_incremented_id;
+    private static List<Order> _orders = new List<Order>{};
+    private int _id;
+    private static int _auto_incremented_id = 0;
 
-    private static Dictionary<string, int> Bakeries = new Dictionary<string, int> {{"Danish", 3}, {"Cake", 10}, {"Muffin", 5}};
+    private Dictionary<string, int> Bakeries = new Dictionary<string, int> {{"Danish", 3}, {"Cake", 10}, {"Muffin", 5}};
     private string _date;
 
     public Order(string date)
@@ -24,14 +24,15 @@ namespace VendorOrderTracker.Models
     //   Bakeries.Add("Muffin", 5);
     // }
 
-    public List<Order> GetAll()
+    public static List<Order> GetAll()
     {
       return _orders;
     }
 
-    public void ClearAll()
+    public static void ClearAll()
     {
       _orders.Clear();
+      _auto_incremented_id = 0;
     }
     public int GetId()
     {
@@ -42,9 +43,12 @@ namespace VendorOrderTracker.Models
     {
       return _date;
     }
-    public Order Find(int searchId)
+    public static Order Find(int searchId)
     {
-      return _orders[searchId];
+      if(_orders.Exists(order => order._id == searchId))
+        return _orders.Find(order => order._id == searchId);
+      else
+        return null;
     }
   }
 }

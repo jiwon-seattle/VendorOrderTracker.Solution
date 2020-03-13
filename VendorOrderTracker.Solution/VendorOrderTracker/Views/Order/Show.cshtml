@@ -1,0 +1,9 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Here is the list of the orders:</h3>
+<p>Orders: @Model["order"].GetDate()</p>
+<p>Vendor Name : @Model["vendor"].GetName()</p>
+
+<p><a href='/vendors/@Model["vendor"].GetId()/orders/new'>Add a new order for @Model["vendor"].GetName()</a></p>

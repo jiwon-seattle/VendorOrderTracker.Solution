@@ -6,16 +6,16 @@ namespace VendorOrderTracker.Models
   {
     private string _vendorName;
     private int _id;
-    private int _auto_incremented_id;
+    private static int _auto_incremented_id;
     private static List<Vendor> _vendorInstances = new List<Vendor> {};
-    private List<Order> _orders;
+    public List<Order> Orders {get; set;}
 
     public Vendor(string vendorName)
     {
       _vendorName = vendorName;
       _vendorInstances.Add(this);
       _id = _auto_incremented_id ++;
-      _orders = new List<Order> {};
+      Orders = new List<Order> {};
     }
 
     public static List<Vendor> GetAll()
@@ -32,14 +32,21 @@ namespace VendorOrderTracker.Models
       return _id;
     }
 
+    // public static List<Order> GetOrderList()
+    // {
+    //   return _orders;
+    // }
     public static Vendor Find(int searchId)
     {
-      return _vendorInstances[searchId];
+      if(_vendorInstances.Exists(vendor => vendor._id == searchId))
+        return _vendorInstances.Find(vendor => vendor._id == searchId);
+      else
+        return null;
     }
 
     public void AddOrder(Order order)
     {
-      _orders.Add(order);
+      Orders.Add(order);
     }
   }
   
