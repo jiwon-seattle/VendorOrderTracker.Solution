@@ -11,6 +11,7 @@ namespace VendorOrderTracker.Controllers
     public ActionResult New(int vendorId)
     {
       // int vendorId = int.Parse(Request.Form["vendorId"]);
+      // Order.GetBakery();
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
@@ -18,9 +19,8 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
-      // int vendorId  = int.Parse(Convert.ToString(Request.Form["vendor.GetId()"]));
-      // int orderId = int.Parse(Convert.ToString(Request.Form["orderId"]));
       Order order = Order.Find(orderId);
+      
       Vendor vendor = Vendor.Find(vendorId);
       Dictionary<string, object> vendorOrder = new Dictionary<string, object>{};
       vendorOrder.Add("order", order);

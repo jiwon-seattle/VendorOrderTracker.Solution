@@ -2,8 +2,19 @@
   Layout = "_Layout";
 }
 
+@using VendorOrderTracker.Models; 
 <h3>Here is the list of the orders:</h3>
-<p>Orders: @Model["order"].GetDate()</p>
+<p>Orders on @Model["order"].GetDate()</p>
+<p></p>
+
+<ul>
+
+  @foreach(KeyValuePair<Bakery,int> item in @Model["order"].GetBakery())
+  {
+    <li>@item.Key.GetName(): @item.Value</li>
+  }
+</ul>
+
 <p>Vendor Name : @Model["vendor"].GetName()</p>
 
 <p><a href='/vendors/@Model["vendor"].GetId()/orders/new'>Add a new order for @Model["vendor"].GetName()</a></p>

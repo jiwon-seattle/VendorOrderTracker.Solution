@@ -21,9 +21,9 @@ namespace VendorOrderTracker.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create()
+    public ActionResult Create(string vendorName)
     {
-      string vendorName = Request.Form["vendorName"];
+      // string vendorName = Request.Form["vendorName"];
       Vendor newVendor = new Vendor(vendorName);
       return RedirectToAction("Index");
     }
@@ -40,13 +40,21 @@ namespace VendorOrderTracker.Controllers
     }
     
     [HttpPost("/vendor/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderDate)
+    public ActionResult Create()
     {
+      int vendorId = int.Parse(Request.Form["vendorId"]);
+      string orderDate = Request.Form["orderDate"];
+      string bakery = Request.Form["bakery"];
+      int quantities = int.Parse(Request.Form["quantities"]);
+      
       Dictionary<string, object> model = new Dictionary<string, object>{};
+      
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderDate);
+      newOrder.AddToOrder(bakery, quantities);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
+      
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);

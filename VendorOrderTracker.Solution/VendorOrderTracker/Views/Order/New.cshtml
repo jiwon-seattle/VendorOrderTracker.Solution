@@ -2,9 +2,30 @@
   Layout = "_Layout";
 }
 
-<h1>Add Order to @Model.GetName()</h1>
+@using VendorOrderTracker.Models; 
+@* @using (Html.BeginForm("CheckRadio", "Vendor", Create.Post)) *@
+
+<h1>Add Order to @Model.GetName() @Bakery.GetAll()</h1>
 <form action="/vendor/@Model.GetId()/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.GetId()">
+  <!--
+  <select name="bakery">
+    <option value="danish">Danish</option>
+    <option value="muffin">Muffin</option>
+    <option value="cake">Cake</option>
+  </select>
+  --> 
+  <label for="danish">Danish</label>
+  <input type="radio" id="danish" name="bakery" value="danish">
+  <label for="muffin">Muffin</label>
+  <input type="radio" id="muffin" name="bakery" value="muffin">
+  <label for="cake">Cake</label>
+  <input type="radio" id="cake" name="bakery" value="cake"> 
+  
+
+  <label for="quantities">How many breads do you want?</label>
+  <input id="quantities" name="quantities" type="number">
+  
   <label for="orderDate">Order Date</label>
   <input id="orderDate" name="orderDate" type="text">
   <button type="submit">Add Order</button>
