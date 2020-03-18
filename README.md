@@ -100,11 +100,11 @@ _Here is a preview of what the output looks like:_
 
 ## Known Bugs
 
-There are currently no known bugs in this program
+There are no known bugs this time
 
 ## Support and contact details
 
-Any feedbacks are appreciated! Please contact at our email: [Jiwon Han](mailto:jiwon1.han@gmail.com).
+Any feedbacks are appreciated! Please contact at our email: [Jiwon Han](mailto:jiwon1.han@gmail.com)
 
 ### License
 
