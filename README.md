@@ -28,7 +28,7 @@
 ---
 ## Description
 
-_A user is able to manage their cupcake orders from vendors(possible to change the theme anytime)._
+Vendor order management program. A user is able to manage their cupcake orders from vendors through this system.
 <!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
 
 ## Setup/Installation Requirements
