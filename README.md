@@ -1,6 +1,6 @@
 # Vendor Order Tracker
 
-#### Vendor's order management system, 03.17.2020
+#### Vendor order management system, 03.17.2020
 
 #### By **Jiwon Han**
 
