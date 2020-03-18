@@ -1,8 +1,8 @@
-# _Vendor Order Tracker_
+# Vendor Order Tracker
 
-#### _Vendor's order management system, 03.17.2020_
+#### Vendor's order management system, 03.17.2020
 
-#### By _**Jiwon Han**_
+#### By **Jiwon Han**
 
 <!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
 <!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
@@ -100,11 +100,11 @@ _Here is a preview of what the output looks like:_
 
 ## Known Bugs
 
-_There are currently no known bugs in this program_
+There are currently no known bugs in this program
 
 ## Support and contact details
 
-_Any feedbacks are appreciated! Please contact us at our email: [Jiwon Han](mailto:jiwon1.han@gmail.com). Thank you._
+Any feedbacks are appreciated! Please contact us at our email: [Jiwon Han](mailto:jiwon1.han@gmail.com).
 
 ### License
 
