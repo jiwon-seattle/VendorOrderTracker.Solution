@@ -10,8 +10,6 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      // int vendorId = int.Parse(Request.Form["vendorId"]);
-      // Order.GetBakery();
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }

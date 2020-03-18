@@ -18,13 +18,25 @@ namespace VendorOrderTracker.Models
     }
     public void AddToOrder(string itemName, int quantities)
     {
+      _bakery.Clear();
       Bakery bakery = Bakery.FindByName(itemName); 
-      _bakery.Add(bakery, quantities);
+      if (quantities < 12)
+      {
+        int total = (bakery.GetPrice() * quantities);
+        _bakery.Add(bakery, total);
+      }
+      else 
+      {
+        int discount = (bakery.GetPrice() * quantities) / 100 * 20;
+        int total = (bakery.GetPrice() * quantities) - discount;
+        _bakery.Add(bakery, total);
+      }
     }
     public List<Order> GetAll()
     {
       return _orders;
     }
+
 
     public static void ClearAll()
     {

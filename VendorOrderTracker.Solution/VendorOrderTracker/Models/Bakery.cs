@@ -8,9 +8,13 @@ namespace VendorOrderTracker.Models
     private int _price;
     private string _description;
     private static List<Bakery> _bakeryInstances = new List<Bakery> {
-      new Bakery("danish", 5, "Yummy"),
-      new Bakery("muffin", 5, "Yummy"),
-      new Bakery("cake", 10, "Yummy")
+      new Bakery("matcha", 4, "Matcha combine the popular flavors of Japanese matcha tea"),
+      new Bakery("mint", 6, "Refreshing mint buttercream atop vanila cake"),
+      new Bakery("strawberry", 5, "Pink strawberry buttercream swirled onto butter cake with a colorful confetti"),
+      new Bakery("velvet", 5, "A classic Southern buttermilk cake with a hint of cocoa. Topped off with a rich pile of cream cheese frosting and a dusting of red sparkle"),
+      new Bakery("cherry", 7, "A soft pink cupcake filled with cherries and topped with maraschoino cherry buttercream"),
+      new Bakery("birthday", 7, "Sweet vanilla buttercream atop our moist vanilla buttercake."),
+      new Bakery("carrot", 5, "The Carrot Walnut is a spiced carrot cake with chunky walnuts throughout, topped with a thick swirl of rich cream")
     };
 
     private int _id;
@@ -26,6 +30,11 @@ namespace VendorOrderTracker.Models
     public string GetName()
     {
       return _name;
+    }
+
+    public int GetPrice()
+    {
+      return _price;
     }
 
     public static List<Bakery> GetAll()

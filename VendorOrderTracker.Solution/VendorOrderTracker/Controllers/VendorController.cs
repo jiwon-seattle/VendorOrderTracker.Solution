@@ -23,9 +23,16 @@ namespace VendorOrderTracker.Controllers
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName)
     {
-      // string vendorName = Request.Form["vendorName"];
+      if (Vendor.FindName(vendorName) == null )
+      {
       Vendor newVendor = new Vendor(vendorName);
-      return RedirectToAction("Index");
+      List<Vendor> allVendors = Vendor.GetAll();
+      }
+      else
+      {
+      List<Vendor> allVendors = Vendor.GetAll();
+      }
+      return RedirectToAction("index");
     }
 
     [HttpGet("/vendors/{vendorId}")]

@@ -32,16 +32,20 @@ namespace VendorOrderTracker.Models
       return _id;
     }
 
-    // public static List<Order> GetOrderList()
-    // {
-    //   return _orders;
-    // }
     public static Vendor Find(int searchId)
     {
       if(_vendorInstances.Exists(vendor => vendor._id == searchId))
         return _vendorInstances.Find(vendor => vendor._id == searchId);
       else
         return null;
+    }
+
+    public static Vendor FindName(string vendorName)
+    {
+      if(_vendorInstances.Exists(vendor => vendor._vendorName.Equals(vendorName)))
+      return _vendorInstances.Find(vendor => vendor._vendorName.Equals(vendorName));
+      else
+      return null;
     }
 
     public void AddOrder(Order order)

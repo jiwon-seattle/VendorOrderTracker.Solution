@@ -5,29 +5,38 @@
 @using VendorOrderTracker.Models; 
 @* @using (Html.BeginForm("CheckRadio", "Vendor", Create.Post)) *@
 
-<h1>Add Order to @Model.GetName() @Bakery.GetAll()</h1>
+<h1>Add Order to Vendor, @Model.GetName()</h1>
 <form action="/vendor/@Model.GetId()/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.GetId()">
-  <!--
-  <select name="bakery">
-    <option value="danish">Danish</option>
-    <option value="muffin">Muffin</option>
-    <option value="cake">Cake</option>
-  </select>
-  --> 
-  <label for="danish">Danish</label>
-  <input type="radio" id="danish" name="bakery" value="danish">
-  <label for="muffin">Muffin</label>
-  <input type="radio" id="muffin" name="bakery" value="muffin">
-  <label for="cake">Cake</label>
-  <input type="radio" id="cake" name="bakery" value="cake"> 
-  
 
-  <label for="quantities">How many breads do you want?</label>
+  <label for="matcha">Matcha </label>
+  <input type="radio" id="matcha" name="bakery" value="matcha">
+  <br>
+  <label for="mint">Mint</label>
+  <input type="radio" id="mint" name="bakery" value="mint">
+  <br>
+  <label for="strawberry">Strawberry</label>
+  <input type="radio" id="strawberry" name="bakery" value="strawberry"> 
+  <br>
+  <label for="velvet">Red Velvet</label>
+  <input type="radio" id="velvet" name="bakery" value="velvet"> 
+  <br>
+  <label for="cherry">Cherry</label>
+  <input type="radio" id="cherry" name="bakery" value="cherry"> 
+  <br>
+  <label for="birthday">Birthday</label>
+  <input type="radio" id="birthday" name="bakery" value="birthday"> 
+  <br>
+  <label for="carrot">Carrot</label>
+  <input type="radio" id="carrot" name="carrot" value="carrot"> 
+  <br>
+
+  <label for="quantities">Quantities *dozen for 10% discount applied* </label>
   <input id="quantities" name="quantities" type="number">
-  
+  <br>
   <label for="orderDate">Order Date</label>
   <input id="orderDate" name="orderDate" type="text">
+  <br>
   <button type="submit">Add Order</button>
 </form>
 
