@@ -7,3 +7,30 @@ div#footer {
     background:#333;
     padding:8px;
 }
+
+img
+{
+    width: 100px;
+    height: 100px;
+}
+
+body 
+{
+    text-align: center;
+    /* background-color: #C9C9EE; */
+}
+
+.orderPage
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.cakes
+{
+    order: 1;
+}
+.complete
+{
+    order:2;
+}

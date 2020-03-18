@@ -10,6 +10,7 @@ namespace VendorOrderTracker.Models
 
     private static Dictionary<Bakery, int> _bakery = new Dictionary<Bakery, int> {};
     private string _date;
+    public static int Quantities;
     public Order(string date)
     {
       _id = _auto_incremented_id ++;
@@ -24,12 +25,14 @@ namespace VendorOrderTracker.Models
       {
         int total = (bakery.GetPrice() * quantities);
         _bakery.Add(bakery, total);
+        Quantities = quantities;
       }
       else 
       {
         int discount = (bakery.GetPrice() * quantities) / 100 * 20;
         int total = (bakery.GetPrice() * quantities) - discount;
         _bakery.Add(bakery, total);
+        Quantities = quantities;
       }
     }
     public List<Order> GetAll()

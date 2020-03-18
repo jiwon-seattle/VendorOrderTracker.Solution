@@ -3,17 +3,14 @@
 }
 
 @using VendorOrderTracker.Models; 
-<h3>Here is the list of the orders:</h3>
-<p>Vendor Name : @Model["vendor"].GetName()</p>
-<p>Orders on @Model["order"].GetDate()</p>
-<p></p>
-
-<ul>
+<h2>Order Details</h2>
+<h3>Vendor Name : @Model["vendor"].GetName()</h3>
+<h3>Orders on @Model["order"].GetDate()</h3>
 
   @foreach(KeyValuePair<Bakery,int> item in @Model["order"].GetBakery())
   {
-    <li>@item.Key.GetName(): @item.Value</li>
+    <h4>@item.Key.GetName() cupcake, Quantities: @Order.Quantities, Price $@item.Value</h4>
   }
-</ul>
 
+<br>
 <p><a href='/vendors/@Model["vendor"].GetId()/orders/new'>Add a new order for @Model["vendor"].GetName()</a></p>

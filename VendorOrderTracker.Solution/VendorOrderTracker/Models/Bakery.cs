@@ -7,14 +7,13 @@ namespace VendorOrderTracker.Models
     private string _name;
     private int _price;
     private string _description;
-    private static List<Bakery> _bakeryInstances = new List<Bakery> {
-      new Bakery("matcha", 4, "Matcha combine the popular flavors of Japanese matcha tea"),
-      new Bakery("mint", 6, "Refreshing mint buttercream atop vanila cake"),
-      new Bakery("strawberry", 5, "Pink strawberry buttercream swirled onto butter cake with a colorful confetti"),
-      new Bakery("velvet", 5, "A classic Southern buttermilk cake with a hint of cocoa. Topped off with a rich pile of cream cheese frosting and a dusting of red sparkle"),
-      new Bakery("cherry", 7, "A soft pink cupcake filled with cherries and topped with maraschoino cherry buttercream"),
-      new Bakery("birthday", 7, "Sweet vanilla buttercream atop our moist vanilla buttercake."),
-      new Bakery("carrot", 5, "The Carrot Walnut is a spiced carrot cake with chunky walnuts throughout, topped with a thick swirl of rich cream")
+    public static List<Bakery> _bakeryInstances = new List<Bakery> {
+      new Bakery("matcha", 4, "<div id='matcha'><p>Price : $4 per each <br> Matcha cupcake combines the popular flavors of Japanese matcha tea</p> <img src='/img/green.png'></div>"),
+      new Bakery("strawberry", 5, "<div id='strawberry'><p>Price : $5 per each <br> Pink strawberry buttercream swirled onto butter cake with a colorful confetti</p> <img src='/img/strawberry.png'></div>"),
+      new Bakery("velvet", 5, "<div id='velvet'><p>Price : $5 per each <br> A classic Southern buttermilk cake with a hint of cocoa. Topped off with a rich pile of cream cheese frosting and a dusting of red sparkle</p> <img src='/img/velvet.png'></div>"),
+      new Bakery("cherry", 7, "<div id='cherry'><p>Price : $7 per each <br> A soft pink cupcake filled with cherries and topped with maraschoino cherry buttercream</p> <img src='/img/cherry.png'></div>"),
+      new Bakery("birthday", 7, "<div id='birthday'><p>Price : $7 per each <br> Sweet vanilla buttercream atop our moist vanilla buttercake</p> <img src='/img/birthday.png'></div>"),
+      new Bakery("carrot", 5, "<div id='carrot'><p>Price : $5 per each <br> The Carrot Walnut is a spiced carrot cake with chunky walnuts throughout, topped with a thick swirl of rich cream</p> <img src='/img/carrot.png'></div>")
     };
 
     private int _id;
@@ -35,6 +34,11 @@ namespace VendorOrderTracker.Models
     public int GetPrice()
     {
       return _price;
+    }
+
+    public string GetDescription()
+    {
+      return _description;
     }
 
     public static List<Bakery> GetAll()

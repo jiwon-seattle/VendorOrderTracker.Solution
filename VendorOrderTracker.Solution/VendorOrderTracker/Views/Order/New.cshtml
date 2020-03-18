@@ -3,42 +3,52 @@
 }
 
 @using VendorOrderTracker.Models; 
+@using System.Web;
 @* @using (Html.BeginForm("CheckRadio", "Vendor", Create.Post)) *@
 
-<h1>Add Order to Vendor, @Model.GetName()</h1>
+<h1>Add Order to Vendor: @Model.GetName()</h1>
+<div class="order">
 <form action="/vendor/@Model.GetId()/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.GetId()">
 
-  <label for="matcha">Matcha </label>
+  <label for="matcha">Matcha Cupcake</label>
   <input type="radio" id="matcha" name="bakery" value="matcha">
+  @Html.Raw(@Bakery._bakeryInstances[0].GetDescription())
   <br>
-  <label for="mint">Mint</label>
-  <input type="radio" id="mint" name="bakery" value="mint">
-  <br>
-  <label for="strawberry">Strawberry</label>
+  <label for="strawberry">Strawberry Cupcake</label>
   <input type="radio" id="strawberry" name="bakery" value="strawberry"> 
+  @Html.Raw(@Bakery._bakeryInstances[1].GetDescription())
   <br>
-  <label for="velvet">Red Velvet</label>
+  <label for="velvet">Red Velvet Cupcake</label>
   <input type="radio" id="velvet" name="bakery" value="velvet"> 
+  @Html.Raw(@Bakery._bakeryInstances[2].GetDescription())
   <br>
-  <label for="cherry">Cherry</label>
+  <label for="cherry">Cherry Cupcake</label>
   <input type="radio" id="cherry" name="bakery" value="cherry"> 
+  @Html.Raw(@Bakery._bakeryInstances[3].GetDescription())
   <br>
-  <label for="birthday">Birthday</label>
+  <label for="birthday">Birthday Cupcake</label>
   <input type="radio" id="birthday" name="bakery" value="birthday"> 
+  @Html.Raw(@Bakery._bakeryInstances[4].GetDescription())
   <br>
-  <label for="carrot">Carrot</label>
+  <label for="carrot">Carrot Cupcake</label>
   <input type="radio" id="carrot" name="carrot" value="carrot"> 
+  @Html.Raw(@Bakery._bakeryInstances[5].GetDescription())
   <br>
+
 
   <label for="quantities">Quantities *dozen for 10% discount applied* </label>
   <input id="quantities" name="quantities" type="number">
-  <br>
   <label for="orderDate">Order Date</label>
   <input id="orderDate" name="orderDate" type="text">
   <br>
   <button type="submit">Add Order</button>
+
+  <br>
+  <br>
+  <br>
 </form>
+</div>
 
 
 <p><a href="/vendors/@Model.GetId()">Return to Vendor</a></p>
