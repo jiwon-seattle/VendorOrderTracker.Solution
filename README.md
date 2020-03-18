@@ -104,7 +104,7 @@ There are no known bugs this time
 
 ## Support and contact details
 
-Any feedbacks are appreciated! Please contact at our email: [Jiwon Han](mailto:jiwon1.han@gmail.com)
+Any feedbacks are appreciated! Please contact at email: [Jiwon Han](mailto:jiwon1.han@gmail.com)
 
 ### License
 
