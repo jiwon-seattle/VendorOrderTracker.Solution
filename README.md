@@ -79,7 +79,7 @@ Vendor order management program. A user is able to manage their cupcake orders f
 
 * _Program allows user to see order details for a vendoro chosen_
   * _Example Input: Jiwon Han's order detail page_
-  * _Example Output: Order date on 02/13, cherry cupcakes, Qyantutues 13, Price $134_
+  * _Example Output: Order date on 02/13, cherry cupcakes, Quantities_ 13, Price $134_
 
 * _Program allows user to freely choose options by clicking link_
   * _Example Input: Add a new orders & Add a new order for Jiwon Han & Back home_
