@@ -74,7 +74,7 @@ Vendor order management program. A user is able to manage their cupcake orders f
   * _Example Output: Order page is shown with input information, such as order Date, cupcake items, quantities_
 
 * _Program allows user to choose different cupcake items and enter quantities and order date_
-  * _Example Input: Add orders to Vendor : Jiwon Han
+  * _Example Input: Add orders to Vendor : Jiwon Han_
   * _Example Output: Cupcakes items such as Matcha/Strawberry/Red Velvet/etc with a brief description, price and order date_
 
 * _Program allows user to see order details for a vendoro chosen_
